@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "typeRoots": ["./@types", "./node_modules/@types"],
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "$root/*": ["./*"],
+      "$envs": ["./envs"],
+      "$envs/*": ["./envs/*"],
+      "$services/*": ["./src/services/*"],
+      "$queries/*": ["./src/queries/*"],
+      "$controllers/*": ["./src/controllers/*"],
+      "$middleware/*": ["./src/middleware/*"],
+      "$dtos/*": ["./src/dtos/*"],
+      "$events": ["./src/events"],
+      "$events/*": ["./src/events/*"],
+      "$models/*": ["./src/models/*"],
+      "$utils/*": ["./src/utils/*"],
+      "$types": ["./src/types"],
+      "$types/*": ["./src/types/*"],
+      "$entities/*": ["./src/entities/*"],
+      "$mappers/*": ["./src/mappers/*"],
+      "$repositories/*": ["./src/repositories/*"],
+      "$prisma/*": ["./prisma/*"],
+      "$temporal/*": ["./src/temporal/*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["src/**/*", "envs/**/*", "alias/**/*", "prisma.config.ts", "@types/**/*"],
+  "exclude": ["node_modules", "dist", "specs"],
+  "ts-node": {
+    "files": true
+  }
+}

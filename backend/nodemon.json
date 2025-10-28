@@ -1,0 +1,9 @@
+{
+  "watch": ["src", "envs", "alias"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts", "specs/**/*.spec.ts", "node_modules", ".git", "dist"],
+  "exec": "node -r @swc-node/register -r ./alias/index.ts src/index.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

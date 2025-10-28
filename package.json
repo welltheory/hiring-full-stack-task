@@ -1,0 +1,27 @@
+{
+  "name": "hiring-full-stack-task",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-Stack Engineer Take-Home Assignment",
+  "scripts": {
+    "dev": "pnpm --parallel --filter backend --filter frontend dev",
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "build": "pnpm --filter backend build && pnpm --filter frontend build",
+    "build:backend": "pnpm --filter backend build",
+    "build:frontend": "pnpm --filter frontend build",
+    "build:fast": "pnpm --filter backend build:fast",
+    "test": "pnpm --filter backend test",
+    "test:frontend": "pnpm --filter frontend test",
+    "env:setup": "docker-compose -f backend/dev/docker-compose.yml up -d",
+    "env:stop": "docker-compose -f backend/dev/docker-compose.yml down",
+    "db:setup": "pnpm --filter backend db:setup",
+    "db:migrate": "pnpm --filter backend db:migrate",
+    "db:studio": "pnpm --filter backend db:studio"
+  },
+  "keywords": ["hiring", "assessment", "full-stack"],
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

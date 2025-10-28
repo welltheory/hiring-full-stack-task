@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  firstName String
+  lastName  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  notifications       Notification[]
+  notificationDigests NotificationDigest[]
+
+  @@index([email])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  message   String
+  type      String
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model NotificationDigest {
+  id         String   @id @default(cuid())
+  userId     String
+  date       DateTime @default(now())
+  summary    String   @db.Text
+  highlights Json     // Array of strings with key highlights
+  status     String   // 'success' | 'failed'
+  error      String?  @db.Text
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId, date])
+  @@index([date, status])
+}

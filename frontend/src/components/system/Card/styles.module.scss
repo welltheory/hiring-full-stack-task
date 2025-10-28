@@ -1,0 +1,23 @@
+/**
+ * CustomCard styles
+ *
+ * Extends Ant Design Card with custom styling
+ */
+
+.customCard {
+  transition: all 0.3s ease;
+
+  &.hoverable {
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+  }
+
+  &.borderless {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+}
