@@ -6,4 +6,3 @@ build/
 .env.test
 *.log
 coverage/
-prisma/migrations/
