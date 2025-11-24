@@ -33,25 +33,6 @@ export class NotificationsController {
   }
 
   /**
-   * POST /api/notifications/mark-all-read
-   */
-  async markAllRead(req: Request, res: Response, next: NextFunction): Promise<void> {
-    try {
-      const notifications = await prisma.notification.updateMany({
-        where: {
-          userId: req.user!.id,
-          readAt: null,
-        },
-        data: { readAt: new Date() },
-      });
-
-      res.json({ success: true, count: notifications.count });
-    } catch (error) {
-      next(error);
-    }
-  }
-
-  /**
    * GET /api/notifications
    * Get all notifications for authenticated user
    */
