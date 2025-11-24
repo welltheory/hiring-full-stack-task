@@ -19,9 +19,9 @@
     "db:push": "dotenv -e .env -- prisma db push",
     "db:reset": "dotenv -e .env -- prisma migrate reset --force",
     "db:seed": "dotenv -e .env -- node -r @swc-node/register -r ./alias/index.ts prisma/seed.ts",
-    "env:up": "docker-compose -f dev/docker-compose.yml up -d",
-    "env:down": "docker-compose -f dev/docker-compose.yml down",
-    "env:logs": "docker-compose -f dev/docker-compose.yml logs -f"
+    "env:up": "docker compose -f dev/docker-compose.yml up -d",
+    "env:down": "docker compose -f dev/docker-compose.yml down",
+    "env:logs": "docker compose -f dev/docker-compose.yml logs -f"
   },
   "keywords": [],
   "author": "",

@@ -13,8 +13,8 @@
     "build:fast": "pnpm --filter backend build:fast",
     "test": "pnpm --filter backend test",
     "test:frontend": "pnpm --filter frontend test",
-    "env:setup": "docker-compose -f backend/dev/docker-compose.yml up -d",
-    "env:stop": "docker-compose -f backend/dev/docker-compose.yml down",
+    "env:setup": "docker compose -f backend/dev/docker-compose.yml up -d",
+    "env:stop": "docker compose -f backend/dev/docker-compose.yml down",
     "db:setup": "pnpm --filter backend db:setup",
     "db:migrate": "pnpm --filter backend db:migrate",
     "db:studio": "pnpm --filter backend db:studio"
