@@ -16,8 +16,6 @@ export class NotificationsController {
    */
   async create(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-      // TODO: Move to service - written inline during MVP for speed
-      // We needed to ship this for our Series A investor demo
       const notification = await prisma.notification.create({
         data: {
           userId: req.user!.id,
